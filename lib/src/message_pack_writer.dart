@@ -6,7 +6,7 @@ import "extension_header.dart";
 import "extension_result.dart";
 import "message_pack_code.dart";
 import "message_pack_range.dart";
-import "mixins/message.dart";
+import "mixins/message_pack_object.dart";
 import "reserved_message_pack_extension_type_code.dart";
 
 class MessagePackWriter {
@@ -52,14 +52,14 @@ class MessagePackWriter {
         writeArray(v);
       case Map<dynamic, dynamic> v:
         writeMap(v);
-      case Message v:
+      case MessagePackObject v:
         writeMessage(v);
       default:
         throw const FormatException("Unexpected type while packing");
     }
   }
 
-  void writeMessage(Message message) {
+  void writeMessage(MessagePackObject message) {
     for (dynamic field in message.messagePackFields) {
       write(field);
     }
@@ -404,7 +404,7 @@ class MessagePackWriter {
   }
 
   void _writeFloatOrDouble(double value) {
-    if (value <= 3.402823E+38 && value >= -3.40282347E+38) {
+    if (value <= 3.402823466E+38 && value >= -3.402823466E+38) {
       writeFloat(value);
     } else {
       writeDouble(value);

@@ -11,7 +11,7 @@ export "src/message_pack_reader.dart";
 export "src/message_pack_serialization_exception.dart";
 export "src/message_pack_type.dart";
 export "src/message_pack_writer.dart";
-export "src/mixins/message.dart";
+export "src/mixins/message_pack_object.dart";
 export "src/nil.dart";
 
 T fromMessagePack<T>(

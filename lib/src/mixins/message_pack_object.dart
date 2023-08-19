@@ -2,9 +2,7 @@ import "dart:typed_data";
 
 import "../../msg_pck.dart";
 
-///
-mixin Message {
-  /// fields to be written
+mixin MessagePackObject {
   List<dynamic> get messagePackFields;
 
   Uint8List toMessagePack() {

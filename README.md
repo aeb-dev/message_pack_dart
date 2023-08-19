@@ -5,7 +5,7 @@
 ## Using with objects
 
 ```dart
-class MyClass with Message {
+class MyClass with MessagePackObject {
   late int id;
   late String name;
   late DateTime time;

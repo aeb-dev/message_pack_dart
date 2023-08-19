@@ -13,7 +13,7 @@ void main() {
   MyClass mc2 = fromMessagePack(data, MyClass.fromMessagePack);
 }
 
-class MyClass with Message {
+class MyClass with MessagePackObject {
   late int id;
   late String name;
   late DateTime time;
