@@ -1,0 +1,6 @@
+include: package:aeb_lint/analysis_options.yaml
+
+linter:
+  rules:
+    public_member_api_docs: false
+    avoid_catching_errors: false

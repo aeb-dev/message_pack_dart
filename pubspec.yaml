@@ -1,0 +1,16 @@
+name: msg_pck
+description: Message pack serializer/deserializer for dart similar to its csharp API
+version: 0.1.0
+homepage: https://github.com/aeb-dev/message_pack_dart
+repository: https://github.com/aeb-dev/message_pack_dart
+issues: https://github.com/aeb-dev/message_pack_dart/issues
+
+environment:
+  sdk: ^3.0.1
+
+dependencies:
+  meta: ^1.9.1
+
+dev_dependencies:
+  aeb_lint: ^1.1.0
+  test: ^1.21.0
