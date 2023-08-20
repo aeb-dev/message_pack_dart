@@ -1,5 +1,5 @@
 <p>
-  <a title="Pub" href="https://pub.dev/packages/message_pack" ><img src="https://img.shields.io/pub/v/message_pack.svg?style=popout" /></a>
+  <a title="Pub" href="https://pub.dev/packages/msg_pck" ><img src="https://img.shields.io/pub/v/msg_pck.svg?style=popout" /></a>
 </p>
 
 ## Using with objects
