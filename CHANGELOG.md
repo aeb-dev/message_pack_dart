@@ -1,3 +1,7 @@
+## 0.3.0
+
+- Bug fixes and api improvements
+
 ## 0.2.0
 
 - Change mixin name from `Message` to `MessagePackObject`.
