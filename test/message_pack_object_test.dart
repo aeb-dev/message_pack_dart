@@ -50,6 +50,7 @@ void main() {
         data,
         equals(
           Uint8List.fromList(<int>[
+            150,
             4,
             162,
             89,
@@ -87,6 +88,7 @@ void main() {
 
     test("fromMessagePack", () {
       writer
+        ..writeArrayHeader(6)
         ..writeInt(4)
         ..writeString("Yo")
         ..writeMap(<dynamic, dynamic>{"Hi": -3})

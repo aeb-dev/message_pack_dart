@@ -29,11 +29,9 @@ class MessagePackWriter {
   }
 
   void write(dynamic value) {
-    if (value == null) {
-      writeNil();
-    }
-
     switch (value) {
+      case null:
+        writeNil();
       case bool v:
         writeBoolean(v);
       case num v:
@@ -60,6 +58,7 @@ class MessagePackWriter {
   }
 
   void writeMessage(MessagePackObject message) {
+    writeArrayHeader(message.messagePackFields.length);
     for (dynamic field in message.messagePackFields) {
       write(field);
     }

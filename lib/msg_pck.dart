@@ -19,10 +19,5 @@ T fromMessagePack<T>(
   T Function(List<dynamic>) creator,
 ) {
   MessagePackReader reader = MessagePackReader.fromTypedData(data);
-  List<dynamic> items = <dynamic>[];
-  while (!reader.end) {
-    items.add(reader.read());
-  }
-
-  return creator(items);
+  return reader.readMessage(creator) as T;
 }

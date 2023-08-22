@@ -171,13 +171,24 @@ class MessagePackReader {
       case MessagePackType.map:
         return readMap();
       case MessagePackType.nil:
-        return readNil();
+        readNil();
+        return null;
       case MessagePackType.string:
         return readString();
       case MessagePackType.unknown:
       default:
         throw _throwInvalidCode(nextCode);
     }
+  }
+
+  dynamic readMessage(dynamic Function(List<dynamic>) creator) {
+    List<dynamic> items = <dynamic>[];
+    int length = readArrayHeader();
+    for (int index = 0; index < length; ++index) {
+      items.add(read());
+    }
+
+    return creator(items);
   }
 
   Nil readNil() {
@@ -222,7 +233,8 @@ class MessagePackReader {
     List<dynamic> array = <dynamic>[];
     int length = readArrayHeader();
     for (int index = 0; index < length; ++index) {
-      array.add(read());
+      dynamic value = read();
+      array.add(value);
     }
 
     return array;
